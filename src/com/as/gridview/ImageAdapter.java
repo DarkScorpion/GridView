@@ -9,7 +9,8 @@ import android.widget.ImageView;
  
 public class ImageAdapter extends BaseAdapter 
 {
-	final static int PADDING_COUNT = 8; //Расстояние между объектами
+	private static final int PADDING_COUNT = 8; //Расстояние между объектами
+	private static final int IMAGE_SIZE = 85; //Размер сторон картинки в пикселях
 	private Context mContext;
 	private int[] SourceArray;
 	
@@ -40,7 +41,7 @@ public class ImageAdapter extends BaseAdapter
 		if (convertView == null) 
 		{
 			imageView = new ImageView(mContext);
-			imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+			imageView.setLayoutParams(new GridView.LayoutParams(IMAGE_SIZE, IMAGE_SIZE)); //Задание размера изображения
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 			imageView.setPadding(PADDING_COUNT, PADDING_COUNT,
 					PADDING_COUNT,PADDING_COUNT);	//Указывает отступы
@@ -49,8 +50,8 @@ public class ImageAdapter extends BaseAdapter
 		{
 			imageView = (ImageView) convertView;
 		}
+		
 		imageView.setImageResource(SourceArray[position]);
 		return imageView;
 	}
-
 }
