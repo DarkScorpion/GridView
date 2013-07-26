@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
  
-public class ImageAdapter extends BaseAdapter 
+public class ImageAdapter extends BaseAdapter
 {
 	private static final int PADDING_COUNT = 8; //Расстояние между объектами
 	private static final int IMAGE_SIZE = 85; //Размер сторон картинки в пикселях
@@ -25,17 +25,17 @@ public class ImageAdapter extends BaseAdapter
 		return SourceArray.length;
 	}
 	
-	public Object getItem(int position) 
+	public Object getItem(int position)
 	{
 		return null; //Должен вернуть обьект, но здесь упрощено
 	}
 	
-	public long getItemId(int position) 
+	public long getItemId(int position)
 	{
 		return 0; //Должен вернуть строку элемента, но тоже упрощено
 	}
 	
-	public View getView(int position, View convertView, ViewGroup parent) 
+	public View getView(int position, View convertView, ViewGroup parent)
 	{
 		ImageView imageView;
 		if (convertView == null) 
@@ -44,7 +44,7 @@ public class ImageAdapter extends BaseAdapter
 			imageView.setLayoutParams(new GridView.LayoutParams(IMAGE_SIZE, IMAGE_SIZE)); //Задание размера изображения
 			imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 			imageView.setPadding(PADDING_COUNT, PADDING_COUNT,
-					PADDING_COUNT,PADDING_COUNT);	//Указывает отступы
+					PADDING_COUNT,PADDING_COUNT); //Указывает отступы
 		}
 		else 
 		{
